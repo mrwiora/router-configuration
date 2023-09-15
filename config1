@@ -10,9 +10,9 @@ interfaces:
         - wan
 routes:
   - destination: 10.0.0.0/24
-    via: 192.0.2.1
+    via: 172.17.0.1
   - destination: 172.123.0.0/24
-    via: 192.168.3.4
+    via: 172.17.0.1
 firewall:
   zones:
     wan:
