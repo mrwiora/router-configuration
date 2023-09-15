@@ -1,4 +1,37 @@
 interfaces:
-  - name: enp0s25
+  - name: wlp3s0
+    mtu: 1500
     addresses:
-      - 192.168.1.1/24
+      - 172.17.0.241/24
+    gateway:
+      - 172.17.0.1
+    firewall:
+      zones:
+        - wan
+routes:
+  - destination: 10.0.0.0/24
+    via: 192.0.2.1
+  - destination: 172.123.0.0/24
+    via: 192.168.3.4
+firewall:
+  zones:
+    wan:
+      in:
+        - tcp dport 22 counter accept
+        - reject
+      out:
+      wifi:
+        - tcp dport 1234 accept
+        - jump custom-chain
+        - reject
+      dmz:
+        - accept
+    lan:
+      in:
+      out:
+      wifi:
+    dmz:
+  chains:
+    custom-chain:
+      - tcp return
+      - reject
