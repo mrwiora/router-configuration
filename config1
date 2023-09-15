@@ -2,7 +2,7 @@ interfaces:
   - name: wlp3s0
     mtu: 1500
     addresses:
-      - 172.17.0.243/24
+      - 172.17.0.242/24
     gateway:
       - 172.17.0.1
     firewall:
