@@ -33,5 +33,4 @@ firewall:
     dmz:
   chains:
     custom-chain:
-      - tcp return
       - reject
