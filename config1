@@ -9,7 +9,7 @@ interfaces:
       zones:
         - wan
 routes:
-  - destination: 10.15.0.0/24
+  - destination: 10.25.0.0/24
     via: 172.17.0.1
   - destination: 172.123.0.0/24
     via: 172.17.0.1
